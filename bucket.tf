@@ -1,5 +1,5 @@
-resource "google_storage_bucket" "image-store" {
-  name     = "image-store-bucket"
+resource "google_storage_bucket" "gcps3" {
+  name     = "gcpbucket"
   location = "EU"
 
   website {
