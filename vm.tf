@@ -26,7 +26,7 @@ resource "google_compute_instance" "default" {
   metadata_startup_script = "${file("./startup.sh")}"
 
   service_account {
-    scopes = ["userinfo-email", "compute-ro", "storage-ro"]
+    scopes = ["userinfo-email", "compute-ro", "storage-wo"]
   }
    allow_stopping_for_update = true
 }
