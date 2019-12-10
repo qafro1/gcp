@@ -1,5 +1,5 @@
 resource "google_storage_bucket" "gcps3" {
-  name     = "challengegce"
+  name     = "challengegcs"
   location = "EU"
 
 }
