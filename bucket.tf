@@ -1,5 +1,5 @@
 resource "google_storage_bucket" "gcps3" {
-  name     = "gcpbucket"
+  name     = "gurus3"
   location = "EU"
 
   website {
