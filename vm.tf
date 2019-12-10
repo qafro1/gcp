@@ -20,7 +20,7 @@ resource "google_compute_instance" "default" {
   }
 
   metadata = {
-    env = "dev"
+    lab-logs-bucket = "gs://challengegcs/"
   }
 
   metadata_startup_script = "${file("./startup.sh")}"
