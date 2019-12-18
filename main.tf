@@ -25,7 +25,7 @@ resource "google_compute_instance_template" "tpl" {
   service_account {
       scopes = ["https://www.googleapis.com/auth/compute.readonly"]
   }
-  allow_stopping_for_update = true
+  
 }
 
 resource "google_compute_instance_from_template" "tpl" {
