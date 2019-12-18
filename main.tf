@@ -23,7 +23,7 @@ resource "google_compute_instance_template" "tpl" {
   can_ip_forward = true
 
   service_account {
-      scopes = ["userinfo-email","https://www.googleapis.com/auth/compute.readonly"]
+      scopes = ["userinfo-email","storage-wo","https://www.googleapis.com/auth/compute.readonly"]
   }
   
 }
