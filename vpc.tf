@@ -1,5 +1,5 @@
 resource "google_compute_subnetwork" "network-with-private-secondary-ip-ranges" {
-  name          = "2nd-subnetwork"
+  name          = "app-subnetwork"
   ip_cidr_range = "10.2.0.0/16"
   region        = "${var.gcp_region}"
   network       = "${google_compute_network.custom-test.self_link}"
