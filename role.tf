@@ -1,6 +1,6 @@
-resource "google_project_iam_custom_role" "baserole" {
-  role_id     = "gcprole201219"
-  title       = "Base GCP Role"
-  description = "Custom gcp role"
-  permissions = ["logging.logEntries.create", "monitoring.metricDescriptors.create", "monitoring.metricDescriptors.get","monitoring.metricDescriptors.list","monitoring.monitoredResourceDescriptors.get","monitoring.monitoredResourceDescriptors.list","monitoring.timeSeries.create"]
+resource "google_project_iam_custom_role" "my-custom-role" {
+  role_id     = "myCustomRole"
+  title       = "My Custom Role"
+  description = "A description"
+  permissions = ["iam.roles.list", "iam.roles.create", "iam.roles.delete"]
 }
