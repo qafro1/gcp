@@ -1,3 +1,3 @@
 output "project_number" {
-  value = "${data.google_project.project.number}"
+  value = "${data.google_project.gcp_project.number}"
 } 
