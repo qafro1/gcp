@@ -4,11 +4,6 @@ resource "google_service_account" "frontend-sa" {
   display_name = "frontend-sa"
 }
 
-resource "google_project_iam_binding" "main" {
-  role    = "${google_project_iam_custom_role.main.role_id}"
-  members = [
-    "email:${google_service_account.frontend-sa.email}",
-  ]
-}
+#resource "google_project_iam_binding" "main" is needed to be added to the Role
 
 
