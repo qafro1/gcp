@@ -5,5 +5,7 @@ resource "google_service_account" "frontend-sa" {
 
 resource "google_project_iam_binding" "main" {
   role    = "${google_project_iam_custom_role.main.role_id}"
-  members = "${google_service_account.frontend-sa.display_name}"
+  members = [
+    "user:jane@example.com",
+  ]
 }
