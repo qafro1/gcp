@@ -1,4 +1,4 @@
-resource "google_project_iam_custom_role" "default" {
+resource "google_project_iam_custom_role" "main" {
   role_id     = "CustomRole"
   title       = "Base GCE Role update"
   description = "Amend writer role to logs"
