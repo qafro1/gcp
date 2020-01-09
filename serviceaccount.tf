@@ -1,8 +1,4 @@
-data "google_project" "project" {}
-
-output "project_number" {
-  value = "${data.google_project.project.number}"
-} 
+data "google_project" "gcp_project" {}
 
 resource "google_service_account" "frontend-sa" {
   account_id   = "frontend-sa"
