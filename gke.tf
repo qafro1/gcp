@@ -38,8 +38,3 @@ resource "google_container_node_pool" "primary_preemptible_nodes" {
     ]
   }
 }
-
-resource "google_project_services" "project" {
-  project = "${var.gcp_project}"
-  services   = ["container.googleapis.com"]
-}
