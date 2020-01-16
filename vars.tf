@@ -20,3 +20,7 @@ variable "google_compute_network" {
   default = "app-vpc"
   
 }
+
+variable "network" {
+  default = "${google_compute_network.custom-test.self_link}"
+}
