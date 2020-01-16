@@ -46,7 +46,7 @@ resource "google_compute_instance_template" "default" {
 }
 
 data "google_compute_image" "my_image" {
-  family  = "debian-cloud/debian-9"
+  source_image = "debian-cloud/debian-9"
   project = "${var.gcp_project}"
 }
 
