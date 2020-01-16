@@ -15,3 +15,8 @@ variable "zone" {
     default = "europe-west2-b"
   
 }
+
+variable "google_compute_network" {
+  default = "app-vpc"
+  
+}

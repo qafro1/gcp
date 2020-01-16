@@ -10,7 +10,7 @@ resource "google_compute_instance_template" "tpl" {
   }
 
   network_interface {
-    network = "default"
+    network = "${var.google_compute_network}"
   }
 
   metadata = {
@@ -32,3 +32,4 @@ resource "google_compute_instance_from_template" "tpl" {
     my_dev       = "my_vm"
   }
 }
+

@@ -10,6 +10,6 @@ resource "google_compute_subnetwork" "network-with-private-secondary-ip-ranges" 
 }
 
 resource "google_compute_network" "custom-test" {
-  name                    = "app-vpc"
+  name                    = "${var.google_compute_network}"
   auto_create_subnetworks = false
 }
