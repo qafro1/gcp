@@ -46,7 +46,7 @@ resource "google_compute_instance_template" "default" {
 }
 
 data "google_compute_image" "my_image" {
-  family  = "debian-9"
+  family  = "Ubuntu-19.10"
   project = "${var.gcp_project}"
 }
 
