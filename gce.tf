@@ -1,35 +1,12 @@
-resource "google_compute_instance_template" "default" {
-  name        = "appserver-template"
-  description = "This template is used to create app server instances."
+resource "google_compute_instance_template" "tpl" {
+  name = "template-dev"
+  machine_type = "${var.machine_type}"
 
-  tags = ["dev", "vm"]
-
-  labels = {
-    environment = "dev"
-  }
-
-  instance_description = "description assigned to instances"
-  machine_type         = "${var.machine_type}"
-  can_ip_forward       = false
-
-  scheduling {
-    automatic_restart   = true
-    on_host_maintenance = "MIGRATE"
-  }
-
-  // Create a new boot disk from an image
   disk {
     source_image = "debian-cloud/debian-9"
-    auto_delete  = true
-    boot         = true
-  }
-
-  // Use an existing disk resource
-  disk {
-    // Instance Templates reference disks by name, not self link
-    source      = "${google_compute_disk.devvm.name}"
-    auto_delete = false
-    boot        = false
+    auto_delete = true
+    disk_size_gb = 100
+    boot = true
   }
 
   network_interface {
@@ -40,20 +17,18 @@ resource "google_compute_instance_template" "default" {
     dev = "vm"
   }
 
-  service_account {
-    scopes = ["userinfo-email", "compute-ro", "storage-ro"]
+  can_ip_forward = true
+}
+
+resource "google_compute_instance_from_template" "tpl" {
+  name           = "vm-from-template"
+  zone           = "${var.zone}"
+
+  source_instance_template = "${google_compute_instance_template.tpl.self_link}"
+
+  // Override fields from instance template
+  can_ip_forward = false
+  labels = {
+    my_dev       = "my_vm"
   }
-}
-
-data "google_compute_image" "my_image" {
-  source_image = "debian-cloud/debian-9"
-  project = "${var.gcp_project}"
-}
-
-resource "google_compute_disk" "devvm" {
-  name  = "existing-disk"
-  image = "${data.google_compute_image.my_image.self_link}"
-  size  = 10
-  type  = "pd-ssd"
-  zone  = "${var.zone}"
 }
