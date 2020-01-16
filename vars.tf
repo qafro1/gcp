@@ -21,6 +21,3 @@ variable "google_compute_network" {
   
 }
 
-variable "network" {
-  default = "${google_compute_network.custom-test.self_link}"
-}
