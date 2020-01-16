@@ -10,7 +10,7 @@ resource "google_compute_instance_template" "tpl" {
   }
 
   network_interface {
-    network = "app-subnetwork"
+    network = "${google_compute_network.custom-test.name}"
   }
 
   metadata = {
