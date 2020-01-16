@@ -17,7 +17,7 @@ variable "zone" {
 }
 
 variable "google_compute_network" {
-  default = "app-vpc"
+  default = "dev-vpc-network"
   
 }
 

@@ -10,7 +10,7 @@ resource "google_compute_instance_template" "tpl" {
   }
 
   network_interface {
-    network = "default"
+    network = "${google_compute_network.vpc_network.name}"
   }
 
   metadata = {
