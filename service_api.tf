@@ -6,8 +6,8 @@
 #}
 
 
-resource "google_scc_source" "projectsecurity" {
-  display_name = "devProject"
-  organization = " "
-  description  = "My custom Cloud Security Command Center Finding Source"
-}
+#resource "google_scc_source" "projectsecurity" {
+#  display_name = "devProject"
+#  organization = " "
+#  description  = "My custom Cloud Security Command Center Finding Source"
+#}
