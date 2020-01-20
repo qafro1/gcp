@@ -22,6 +22,6 @@ resource "google_bigquery_table" "default" {
     env = "default"
   }
 
-  schema = "${file("schema.json")}"
+  #schema = "${file("schema.json")}"
 }
 
