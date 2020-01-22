@@ -1,5 +1,5 @@
 resource "google_container_cluster" "primary" {
-  name     = "my-dev-cluster"
+  name     = "dev-cluster"
   location = "europe-west2-b"
   min_master_version = "1.15"
 
