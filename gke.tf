@@ -1,5 +1,5 @@
 resource "google_container_cluster" "primary" {
-  name     = "dev-cluster"
+  name     = "jenkins-cd"
   location = "europe-west2-b"
   min_master_version = "1.15"
 
@@ -36,6 +36,7 @@ resource "google_container_node_pool" "primary_preemptible_nodes" {
     oauth_scopes = [
       "https://www.googleapis.com/auth/logging.write",
       "https://www.googleapis.com/auth/monitoring",
+      "https://www.googleapis.com/auth/source.read_write,cloud-platform",
     ]
   }
 }
