@@ -1,10 +1,8 @@
-variable "credentials" { 
+variable "credentials" {
 }
 variable "gcp_project" {
-  
 }
-variable "gcp_region" {
-  
+variable "gcp_region" { 
 }
 
 variable "machine_type" {
@@ -16,8 +14,4 @@ variable "zone" {
   
 }
 
-variable "google_compute_network" {
-  default = "dev-vpc-network"
-  
-}
 
