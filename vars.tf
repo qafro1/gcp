@@ -11,7 +11,6 @@ variable "machine_type" {
 
 variable "zone" {
     default = "europe-west2-b"
-  
 }
 
 
