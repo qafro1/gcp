@@ -2,6 +2,7 @@ resource "google_container_cluster" "primary" {
   name     = "${var.name}"
   location = "${var.location}"
   network  = "${var.google_compute_network}"
+  enable_legacy_abac = true
 
   # We can't create a cluster with no node pool defined, but we want to only use
   # separately managed node pools. So we create the smallest possible default
