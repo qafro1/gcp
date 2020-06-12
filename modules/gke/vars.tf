@@ -13,3 +13,6 @@ variable "google_compute_network" {
 variable "enable_legacy_abac" {
     default = true
 }
+variable "min_master_version" {
+    default = "1.16.9-gke.2"
+}

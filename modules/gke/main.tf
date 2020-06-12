@@ -1,14 +1,9 @@
-data "google_container_engine_versions" "primary" {
-  location       = "${var.location}"
-  version_prefix = "1.16.9-gke.2"
-}
-
 resource "google_container_cluster" "primary" {
   name     = "${var.name}"
   location = "${var.location}"
   network  = "${var.google_compute_network}"
   enable_legacy_abac = "${var.enable_legacy_abac}"
-  node_version = data.google_container_engine_versions.primary.latest_node_version
+  min_master_version = "${var.min_master_version}"
 
 
   # We can't create a cluster with no node pool defined, but we want to only use
