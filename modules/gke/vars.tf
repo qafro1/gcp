@@ -8,5 +8,4 @@ variable "machine_type" {
     default = "n1-standard-1"
 }
 variable "google_compute_network" {
-  default = "demo-vpc-network"
 }
