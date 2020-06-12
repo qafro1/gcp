@@ -23,11 +23,11 @@ resource "google_container_node_pool" "primary_preemptible_nodes" {
   location   = "${var.location}"
   cluster    = google_container_cluster.primary.name
   node_count = 1
-  network    = "${module.dev-vpc.name}"
-
+  
   node_config {
     preemptible  = true
     machine_type = "${var.machine_type}"
+    network    = "${module.dev-vpc.name}"
 
     metadata = {
       disable-legacy-endpoints = "true"
