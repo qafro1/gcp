@@ -1,4 +1,4 @@
-module "dev-k8s" {
+module "kubernates" {
     source = "./modules/gke"
     
 }

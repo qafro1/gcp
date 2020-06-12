@@ -1,1 +1,1 @@
-{"Modules":[{"Key":"dev-vpc","Source":"./modules/vpc","Dir":"modules/vpc"},{"Key":"","Source":"","Dir":"."},{"Key":"dev-k8s","Source":"./modules/gke","Dir":"modules/gke"}]}
+{"Modules":[{"Key":"","Source":"","Dir":"."},{"Key":"dev-k8s","Source":"./modules/gke","Dir":"modules/gke"},{"Key":"kubernates","Source":"./modules/gke","Dir":"modules/gke"},{"Key":"dev-vpc","Source":"./modules/vpc","Dir":"modules/vpc"}]}
